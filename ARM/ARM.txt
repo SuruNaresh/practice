@@ -2,6 +2,11 @@ ARM - Azure Resource Manager
 ARM Templates - IAC (Infrastructure as a Code)
 ARM templates file extension - .json
 
+ARM Templates types
+1. Regular Templates
+2. Nested Templates
+3. Linked Templates
+
 syntax refernce - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax
 
 
