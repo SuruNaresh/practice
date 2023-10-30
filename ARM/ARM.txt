@@ -1,0 +1,41 @@
+ARM - Azure Resource Manager
+ARM Templates - IAC (Infrastructure as a Code)
+ARM templates file extension - .json
+
+syntax refernce - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/syntax
+
+
+ARM Templates syntax (main.json)
+schema - The level of the deployment we do in azure (Mandatorly required)
+            resourcegroup - https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#
+            subscription - https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#
+            management group - https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#
+            tenant - https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#
+
+Content version - 1.0.0.0 (Mandatorly required)
+Parameters - values could be passed externally (optional) - data types
+                we can pass values using parameters.json
+                parameters.json
+                    schema - "https://schema.management.azure.com/"
+                    contentVersion - 
+                    Parameters - values
+
+Variables - calculated value based on parameters or hardcoded values (Optional)
+Resources - resources to deploy like VM, Storage account etc (Mandatorly required)
+Outputs - Values that will be returned after successful deployment (Optional)
+
+
+Resource blocks - https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts?pivots=deployment-language-arm-template
+1. type - 
+2. api version
+3. name
+
+parameters block
+        "parameter1": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+            "allowedValues" : "list of values can be passed that are only allowed"
+            "defaultValue": "even if no value has been passed from parameters file it will value from default"
+        }

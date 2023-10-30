@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters":{
+        "storageaccountname": {
+            "type": "string",
+            "defaultValue": "sfdsgsgvrs",
+            "metadata": {
+                "description": "This parameter helps you to pass storage account name"
+            }
+        },
+        "publicaccess": {
+            "type": "bool",
+            "defaultValue": false,
+            "metadata": {
+                "description": "public access should be enabled or disabled"
+            }
+        },
+        "accesstier": {
+            "type": "string",
+            "allowedValues": [
+                "Hot",
+                "Cool"
+            ],
+            "defaultValue": "Hot",
+            "metadata": {
+                "description": "provide tier of it either Hot or cool"
+            }
+        }
+    },
+    "variables": {
+        "httpstraffic": true,
+        "kind": "StorageV2"
+    },    
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2023-01-01",
+            "name": "[parameters('storageaccountname')]",
+            "location": "westus",
+            "kind": "[variables('kind')]",
+            "sku": "Standard_LRS",
+            "properties": {
+                "accessTier": "[parameters('accesstier')]",
+                "allowBlobPublicAccess": "[parameters('publicaccess')]",
+                "supportsHttpsTrafficOnly": "[variables('httpstraffic')]"
+            }
+        }
+    ]
+}
