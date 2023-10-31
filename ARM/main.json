@@ -26,6 +26,31 @@
             "metadata": {
                 "description": "provide tier of it either Hot or cool"
             }
+        },
+        "sqlname": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "sqllogin": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "sqlpassword": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "sqldbname": {
+            "type": "string",
+            "defaultValue": "envsqldb",
+            "metadata": {
+                "description": "description"
+            }
         }
     },
     "variables": {
@@ -39,11 +64,49 @@
             "name": "[parameters('storageaccountname')]",
             "location": "westus",
             "kind": "[variables('kind')]",
-            "sku": "Standard_LRS",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
             "properties": {
                 "accessTier": "[parameters('accesstier')]",
                 "allowBlobPublicAccess": "[parameters('publicaccess')]",
                 "supportsHttpsTrafficOnly": "[variables('httpstraffic')]"
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers",
+            "apiVersion": "2022-11-01-preview",
+            "name": "[parameters('sqlname')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "version": "12.0",
+                "administratorLogin": "[parameters('sqllogin')]",
+                "administratorLoginPassword": "[parameters('sqlpassword')]",
+                "publicNetworkAccess": "Enabled",
+                "minimalTlsVersion": "1.2",
+                "administrators": {
+                    "administratorType": "ActiveDirectory",
+                    "login": "azureaks@azureclassesseptgmail.onmicrosoft.com",
+                    "tenantId": "b61b3f0b-cfe7-480d-8cab-4c411aea7c71",
+                    "sid": "d09fce31-5358-4d3c-b647-d598a8cfa2ef"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "name": "[concat(parameters('sqlname'),'/',parameters('sqldbname'))]",
+            "apiVersion": "2022-11-01-preview",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Basic",
+                "tier": "Basic"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('sqlname'))]"
+            ],
+            "properties": {
+                "requestedBackupStorageRedundancy": "Local"
             }
         }
     ]

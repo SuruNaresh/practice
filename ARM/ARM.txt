@@ -21,8 +21,8 @@ Content version - 1.0.0.0 (Mandatorly required)
 Parameters - values could be passed externally (optional) - data types
                 we can pass values using parameters.json
                 parameters.json
-                    schema - "https://schema.management.azure.com/"
-                    contentVersion - 
+                    schema - "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#"
+                    contentVersion - "1.0.0.0"
                     Parameters - values
 
 Variables - calculated value based on parameters or hardcoded values (Optional)
@@ -44,3 +44,14 @@ parameters block
             "allowedValues" : "list of values can be passed that are only allowed"
             "defaultValue": "even if no value has been passed from parameters file it will value from default"
         }
+
+ARM Functions - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-comparison
+
+commands to deploy ARM
+
+$rg = 'qa-rg'
+$mainpath = 'C:\Users\CH VAMSI KRISHNA\Downloads\New folder\powershell\ARM\main.json'
+$parampath = 'C:\Users\CH VAMSI KRISHNA\Downloads\New folder\powershell\ARM\qa.parameters.json'
+
+#Test-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $mainpath -TemplateParameterFile $parampath
+New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $mainpath -TemplateParameterFile $parampath
