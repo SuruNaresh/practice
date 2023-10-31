@@ -85,12 +85,12 @@
                 "administratorLoginPassword": "[parameters('sqlpassword')]",
                 "publicNetworkAccess": "Enabled",
                 "minimalTlsVersion": "1.2",
-                "administrators": {
-                    "administratorType": "ActiveDirectory",
-                    "login": "azureaks@azureclassesseptgmail.onmicrosoft.com",
-                    "tenantId": "b61b3f0b-cfe7-480d-8cab-4c411aea7c71",
-                    "sid": "d09fce31-5358-4d3c-b647-d598a8cfa2ef"
-                }
+                //"administrators": {
+                //    "administratorType": "ActiveDirectory",
+                //    "login": "azureaks@azureclassesseptgmail.onmicrosoft.com",
+                //    "tenantId": "b61b3f0b-cfe7-480d-8cab-4c411aea7c71",
+                 //   "sid": "d09fce31-5358-4d3c-b647-d598a8cfa2ef"
+                //}
             }
         },
         {
