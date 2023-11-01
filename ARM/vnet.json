@@ -1,0 +1,103 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters":{
+        "vnetname": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "vnetaddressspace": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "defaultaddressprefix": {
+            "type": "string"
+        },
+        "defaultsubnetneeded": {
+            "type": "bool",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "drsubnetprefix": {
+            "type": "string",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "subnetarray":{
+            "type": "array"
+        },
+        "multisubnetneeded": {
+            "type": "bool"
+        }
+    },
+    "variables":{
+
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/virtualnetworks",
+            "apiVersion": "2018-11-01",
+            "name": "[parameters('vnetname')]",
+            "location": "[parameters('location')]",
+            "properties":{
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('vnetaddressspace')]"
+                    ]
+                }
+            }
+        },
+        {
+            "condition": "[parameters('defaultsubnetneeded')]",
+            "type": "Microsoft.Network/virtualnetworks/subnets",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vnetname'), '/', 'default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualnetworks', parameters('vnetname'))]"
+            ],
+            "properties": {
+                "addressPrefix": "[parameters('defaultaddressprefix')]"
+            }
+        },
+        {
+            "condition": "[contains(parameters('vnetname'),'prod')]",
+            "type": "Microsoft.Network/virtualnetworks/subnets",
+            "apiVersion": "2023-04-01",
+            "name": "[concat(parameters('vnetname'), '/', 'drsubnet')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualnetworks', parameters('vnetname'))]"
+            ],
+            "properties": {
+                "addressPrefix": "[parameters('drsubnetprefix')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualnetworks/subnets",
+            "apiVersion": "2023-04-01",
+            "condition": "[parameters('multisubnetneeded')]",
+            "name": "[concat(parameters('vnetname'),'/',parameters('subnetarray')[copyIndex()].name)]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualnetworks', parameters('vnetname'))]"
+            ],
+            "properties": {
+                "addressPrefix": "[parameters('subnetarray')[copyIndex()].addressspace]"
+            },
+            "copy": {
+                "name": "subnetcopy",
+                "count": "[length(parameters('subnetarray'))]"
+            }
+        }
+    ]
+}

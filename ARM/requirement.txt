@@ -1,0 +1,26 @@
+requirement
+1. vnet should be created -- Done
+2. either default subnet is needed or not -- Done
+3. either multiple subnets to be crated or not -- Done
+        frontend
+        middle
+        backend
+4. if environment is prod it should deploy dr subnet -- Done
+
+
+Assignment
+1. Template - create a vm 
+    a. use an existing vnet
+    b. create a subnet
+    c. create a nic card with public ip
+    d. create a vm
+2. Template - storage account with private end point
+    a. create a new vnet
+    b. create a subnet for the private endpoint
+    c. create private dns zone
+    d. create a storage account and enable private endpoint
+3. load balancer or traffic manager or application gateway
+4. create multiple VM's - 4 to 6
+    a. 2 should from same vnet
+    b. no vm should be from the same subnet
+    c. multiple vm's using copy index

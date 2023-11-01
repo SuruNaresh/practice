@@ -1,0 +1,43 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vnetname": {
+            "value": "dev-vnet" // TODO: Fill in parameter value
+        },
+        "location": {
+            "value": "eastus" // TODO: Fill in parameter value
+        },
+        "vnetaddressspace": {
+            "value": "10.0.0.0/16" // TODO: Fill in parameter value
+        },
+        "defaultaddressprefix": {
+            "value": "10.0.0.0/24" // TODO: Fill in parameter value
+        },
+        "defaultsubnetneeded": {
+            "value": true // TODO: Fill in parameter value
+        },
+        "drsubnetprefix": {
+            "value": "10.0.1.0/24" // TODO: Fill in parameter value
+        },
+        "subnetarray": {
+            "value": [
+                {
+                    "name": "frontend",
+                    "addressspace": "10.0.2.0/24"
+                },
+                {
+                    "name": "middle",
+                    "addressspace": "10.0.3.0/24"
+                },
+                {
+                    "name": "backend",
+                    "addressspace": "10.0.4.0/24"
+                }
+            ]
+        },
+        "multisubnetneeded": {
+            "value": true // TODO: Fill in parameter value
+        }
+    }
+}

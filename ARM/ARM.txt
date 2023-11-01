@@ -47,6 +47,11 @@ parameters block
 
 ARM Functions - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-functions-comparison
 
+ARM Modes
+1. Incremental - it will keep exisitng resources and it will add new resources which are part of template
+2. Complete - it will delete the resources which are not part of template
+3. Validation - it helps only to validate
+
 commands to deploy ARM
 
 $rg = 'qa-rg'
