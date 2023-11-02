@@ -1,0 +1,5 @@
+scope - resourcegroup, subscription, managementGroup, tenant
+parameters - to pass any values externally
+Variables - based on param or hardcoded values
+resources - to deploy a resource
+outputs - to get information post creation
