@@ -2,6 +2,7 @@ param storageName string
 param location string
 param Sku string
 param kind string
+param accesstier string = 'Hot'
 
 resource storage 'Microsoft.Storage/storageAccounts@2023-01-01'= {
   name: storageName
@@ -11,7 +12,9 @@ resource storage 'Microsoft.Storage/storageAccounts@2023-01-01'= {
   }
   kind: kind
   properties:{
-    accessTier: 'Cool'
+    accessTier: accesstier
     supportsHttpsTrafficOnly: true
   }
 }
+
+output storageaccountname string = storage.name
