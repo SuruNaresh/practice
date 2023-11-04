@@ -5,7 +5,7 @@ param addressprefix string
 
 var name = '${envname}-${vnetshortname}-vnet'
 
-resource virtual 'Microsoft.Network/virtualNetworks@2023-05-01' = {
+resource virtual 'Microsoft.Network/virtualNetworks@2022-05-01' = {
   name: name
   location: location
   properties: {

@@ -11,11 +11,11 @@ param storagename string
 
 var name = '${envname}-${vmshortname}-vm'
 
-resource storageaccount 'Microsoft.Storage/storageAccounts@2023-01-01' existing = {
+resource storageaccount 'Microsoft.Storage/storageAccounts@2022-05-01' existing = {
   name: storagename
 }
 
-resource vm 'Microsoft.Compute/virtualMachines@2023-07-01'={
+resource vm 'Microsoft.Compute/virtualMachines@2022-03-01'={
   name: name
   location: location
   properties:{

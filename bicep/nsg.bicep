@@ -4,7 +4,7 @@ param location string
 
 var nsgname = '${envname}-${nsgshortname}-nsg'
 
-resource nsg 'Microsoft.Network/networkSecurityGroups@2023-05-01' = {
+resource nsg 'Microsoft.Network/networkSecurityGroups@2022-05-01' = {
   name: nsgname
   location: location
   properties:{

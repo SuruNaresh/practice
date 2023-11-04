@@ -8,10 +8,12 @@ resource pip 'Microsoft.Network/publicIPAddresses@2023-05-01' = {
   name: publicIpName
   location: location
   sku:{
-    name: 'Standard'
+    name: 'Basic'
     tier: 'Regional'
   }
   properties:{
     publicIPAllocationMethod: 'Dynamic'
   }
 }
+
+output publicipname string = pip.name

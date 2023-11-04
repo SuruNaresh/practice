@@ -4,7 +4,7 @@ param Sku string
 param kind string
 param accesstier string = 'Hot'
 
-resource storage 'Microsoft.Storage/storageAccounts@2023-01-01'= {
+resource storage 'Microsoft.Storage/storageAccounts@2022-05-01'= {
   name: storageName
   location: location
   sku: {
