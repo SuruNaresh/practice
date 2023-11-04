@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storagename":{
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2022-09-01",
+            "name": "linkedtemplate",
+            "location": "West US",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "contentVersion": "1.0.0.0",
+                    "uri": "https://qasrdfdfv.blob.core.windows.net/arm/main.json"
+                },
+                "parameters": {
+                    "storageaccountname": {
+                        "value": "[parameters('storagename')]"
+                    }
+                }
+            }
+        }
+    ]
+}
