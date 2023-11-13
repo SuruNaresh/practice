@@ -46,4 +46,7 @@ modifying exisitng files
 adding new files
 deleting it
 
+changing branches
+git switch branch name
+git checkout branch name
 
