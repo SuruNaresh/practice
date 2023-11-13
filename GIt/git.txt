@@ -17,7 +17,7 @@ adding new files
 U (green) - untracked
 A (green) - Index added
 M (yellow) - modified
-D (black) - deleted
+D (red) - deleted
 R (purple) - renamed
 
 git add <<file name/file path>> -- it will only add those
@@ -26,7 +26,10 @@ git commit -a --> to review and commit it
 git push --> we can use this directly if remote repo is also having same branches
 git push --set-upstream origin <<branch name>> --> if branch is not exisiting in remote repository
 
-
+modifying files
+git commit -a 
+git commit -a -m "<<provide commit message>>"
+git commit -am "<<provide commit message>>"
 
 modifying exisitng files
 adding new files
