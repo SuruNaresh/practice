@@ -47,6 +47,6 @@ adding new files
 deleting it
 
 changing branches
-git switch branch name
-git checkout branch name
+git switch branch name --> helps only to switch the branches
+git checkout branch name --> helps to switch and also create new branches in local
 
