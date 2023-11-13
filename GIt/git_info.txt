@@ -18,7 +18,7 @@ U (green) - untracked
 A (green) - Index added
 M (yellow) - modified
 D (red) - deleted
-R (purple) - renamed
+R (green) - Index renamed
 
 git add <<file name/file path>> -- it will only add those
 git add . --> it will take all newly created files
@@ -32,6 +32,14 @@ git commit -a -m "<<provide commit message>>"
 git commit -am "<<provide commit message>>"
 git push --> we can use this directly if remote repo is also having same branches
 git push --set-upstream origin <<branch name>> --> if branch is not exisiting in remote repository
+
+
+deleting it
+delete the file
+git commit -am "<<provide commit message>>"
+git push --> we can use this directly if remote repo is also having same branches
+git push --set-upstream origin <<branch name>> --> if branch is not exisiting in remote repository
+
 
 
 modifying exisitng files
