@@ -1,0 +1,10 @@
+resolving merge conflicts
+source branch - users/kiran/234
+target branch - main
+
+1. checkout or switch to target branch --> git switch main or git checkout main
+2. keep up to date - git pull
+3. checkout or switch to source branch --> git switch users/kiran/234 or git checkout users/kiran/234
+4. keep up to date - git pull
+5. merge target branch to source branch --> git merge main
+6. resolve in merge editor and complete merge

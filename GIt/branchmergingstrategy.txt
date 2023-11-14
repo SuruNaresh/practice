@@ -1,0 +1,14 @@
+initially
+    1. user branches
+        2. developement
+            3. release/relase1.0
+                4. main
+
+1. user branches
+    2. developement
+        3. main
+
+1. user branches
+    2. main
+
+adhoc issues -  they will create hot fix branchess
