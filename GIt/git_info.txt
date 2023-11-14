@@ -64,3 +64,5 @@ branch policies
 1. minimum reviewers
 2. linked work items
 3. comment resolution
+4. limit merge types
+5. build validation
