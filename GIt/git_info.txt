@@ -66,3 +66,5 @@ branch policies
 3. comment resolution
 4. limit merge types
 5. build validation
+tagging information
+1. each commit could have multiple tags
