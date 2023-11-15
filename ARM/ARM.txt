@@ -52,6 +52,7 @@ ARM Modes
 2. Complete - it will delete the resources which are not part of template
 3. Validation - it helps only to validate
 
+#testing changes
 commands to deploy ARM
 
 $rg = 'qa-rg'
