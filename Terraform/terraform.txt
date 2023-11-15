@@ -1,0 +1,30 @@
+IAC - Infrastructure as a code
+this will help to do multi cloud deployment and also on prem.
+
+Hashicorp
+language - HCL - Hashicorp configuration language
+
+file extensions
+.tf
+.tfvars
+.tfstate
+
+types
+1. regular
+2. module
+
+providers
+variables
+outputs
+resource blocks
+data blocks
+null resources
+provisioners
+dynamic blocks
+
+
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
