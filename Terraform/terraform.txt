@@ -28,3 +28,12 @@ terraform validate
 terraform plan
 terraform apply
 terraform destroy
+
+
+files
+-------
+main.tf --> consists of all the informtion related to deployment related to resources with resource or data blocks
+variables.tf --> for declaring variables
+output.tf --> to store informtion which is out put of deployment into variables
+providers.tf --> provider information
+env.tfvars --> passing the values for variables
