@@ -37,3 +37,31 @@ variables.tf --> for declaring variables
 output.tf --> to store informtion which is out put of deployment into variables
 providers.tf --> provider information
 env.tfvars --> passing the values for variables
+
+datatypes
+----------
+1. string - can be anything single value consists of alphabets, numbers and special characters
+2. number - numeric value it could be integers,floats
+3. bool - true or false
+4. list/tuple - sequence or array of values - ["a","b","c","d"]
+5. map/object - multiple key value pairs - {name="test-rg",location="westus",count=5}
+6. set - collection but unique values that don't have any duplication
+
+functions
+-------------
+https://developer.hashicorp.com/terraform/language/functions/title
+alltrue
+anytrue
+coalesce - to pick a non empty first value in array or list
+coalescelist - to pick a non empty first list in a list
+concat
+contains
+distinct - removes all duplicates
+
+custom variables
+------------------
+https://developer.hashicorp.com/terraform/language/expressions/custom-conditions
+
+lifecycle
+------------
+https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle
