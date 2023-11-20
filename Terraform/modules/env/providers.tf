@@ -14,6 +14,6 @@ provider "azurerm" {
 
 terraform {
   backend "local" {
-    path = "qa.tfstate"
+    path = "dev.tfstate"
   }
 }

@@ -1,0 +1,21 @@
+pipelines - series of steps executed sequentially with zero or less manual intervention
+- **Pipelines**: a collection of tasks that are run in sequence, allowing for the execution of complex workflows. Pipeline is an
+
+Azure Pipelines
+1. classic editor
+2. yaml based pipelines - PAC - pipeline as a code
+
+CI/CD
+CI - Continous Integration
+CD - Continous Deployment / Continous Delivery
+
+Agents
+1. Hosted - Azure provided and managed
+2. Self-hosted - we create and we manage
+
+Triggers
+1. Manual trigger (run manually)
+2. Scheduled triggers (schedule the run time)
+3. Source control triggers (commit to source control repo) - CI
+4. Pull request triggers (merge into main branch)
+5. Build Completion 
