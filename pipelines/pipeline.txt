@@ -2,7 +2,7 @@ pipelines - series of steps executed sequentially with zero or less manual inter
 - **Pipelines**: a collection of tasks that are run in sequence, allowing for the execution of complex workflows. Pipeline is an
 
 Azure Pipelines
-1. classic editor
+1. classic editor - UI based pipelines
 2. yaml based pipelines - PAC - pipeline as a code
 
 CI/CD
@@ -19,3 +19,32 @@ Triggers
 3. Source control triggers (commit to source control repo) - CI
 4. Pull request triggers (merge into main branch)
 5. Build Completion 
+
+
+stages
+1. build stage
+    jobs:
+      job:
+       steps:
+        tasks
+2. test stage
+3. deploy stage - dev
+4. deploy stage - qa
+
+stage:
+    job:
+        steps:
+            task:
+
+
+variables
+------------
+1. pipeline variables - variables used in a particular pipeline
+2. variable groups - these were common in which ever pipeline we need we can interlink
+3. runtime variables - get the values while pipeline running
+
+
+
+service connections - To authenticate any external tool/service outside of azure devops we need to use service connections
+
+Extensions - if something is not available we can use this extensions and install in organization and utilize it.
