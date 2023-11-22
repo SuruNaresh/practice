@@ -37,12 +37,14 @@ stage:
             task:
 
 
+
+
 variables
 ------------
 1. pipeline variables - variables used in a particular pipeline
 2. variable groups - these were common in which ever pipeline we need we can interlink
-3. runtime variables - get the values while pipeline running
-
+3. runtime variables - get the values while pipeline running - https://learn.microsoft.com/en-us/azure/devops/pipelines/process/set-variables-scripts?view=azure-devops&tabs=powershell
+predefined variables - https://learn.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
 
 
 service connections - To authenticate any external tool/service outside of azure devops we need to use service connections
