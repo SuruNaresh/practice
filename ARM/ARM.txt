@@ -61,3 +61,7 @@ $parampath = 'C:\Users\CH VAMSI KRISHNA\Downloads\New folder\powershell\ARM\qa.p
 
 #Test-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $mainpath -TemplateParameterFile $parampath
 New-AzResourceGroupDeployment -ResourceGroupName $rg -TemplateFile $mainpath -TemplateParameterFile $parampath
+
+
+ARM-CI pipeline reference - https://dev.azure.com/adodemo234/powershell/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&id=32&view=Tab_Triggers
+ARM-CD pipeline refernce - https://dev.azure.com/adodemo234/powershell/_releaseDefinition?definitionId=1&_a=environments-editor-preview
