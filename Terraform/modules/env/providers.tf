@@ -12,8 +12,8 @@ provider "azurerm" {
   }
 }
 
-terraform {
-  backend "local" {
-    path = "dev.tfstate"
-  }
-}
+//terraform {
+//  backend "local" {
+//    path = "dev.tfstate"
+//  }
+//}
