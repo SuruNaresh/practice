@@ -50,3 +50,26 @@ predefined variables - https://learn.microsoft.com/en-us/azure/devops/pipelines/
 service connections - To authenticate any external tool/service outside of azure devops we need to use service connections
 
 Extensions - if something is not available we can use this extensions and install in organization and utilize it.
+
+application based Pipelines
+
+1. one require compilation
+.net
+  .csproj or .sln or both --> .dll or .exe
+Java
+  pom.xml --> .jar or .war
+
+2. doesn't require compilation
+python
+  .py --> .py
+php
+  .php --> .php
+
+steps
+1. install all required things
+2. restore any dependencies
+3. build the application
+4. test the application
+5. scan the application
+6. copy output
+7. publish artifact
