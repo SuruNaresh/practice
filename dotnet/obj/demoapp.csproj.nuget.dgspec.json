@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CH VAMSI KRISHNA\\source\\repos\\demoapp\\demoapp.csproj": {}
+    "C:\\Users\\CH VAMSI KRISHNA\\Downloads\\New folder\\powershell\\dotnet\\demoapp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CH VAMSI KRISHNA\\source\\repos\\demoapp\\demoapp.csproj": {
+    "C:\\Users\\CH VAMSI KRISHNA\\Downloads\\New folder\\powershell\\dotnet\\demoapp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CH VAMSI KRISHNA\\source\\repos\\demoapp\\demoapp.csproj",
+        "projectUniqueName": "C:\\Users\\CH VAMSI KRISHNA\\Downloads\\New folder\\powershell\\dotnet\\demoapp.csproj",
         "projectName": "demoapp",
-        "projectPath": "C:\\Users\\CH VAMSI KRISHNA\\source\\repos\\demoapp\\demoapp.csproj",
+        "projectPath": "C:\\Users\\CH VAMSI KRISHNA\\Downloads\\New folder\\powershell\\dotnet\\demoapp.csproj",
         "packagesPath": "C:\\Users\\CH VAMSI KRISHNA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CH VAMSI KRISHNA\\source\\repos\\demoapp\\obj\\",
+        "outputPath": "C:\\Users\\CH VAMSI KRISHNA\\Downloads\\New folder\\powershell\\dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CH VAMSI KRISHNA\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,0 +1,96 @@
+#parameters
+#datatypes - string, number, boolean, object
+parameter:
+- name : teststring #reference of parameter to be provided accross the yaml
+  displayName: test string # to show what to be displayed while running (optional)
+  type: string # data type
+  default: kumar # to be provided any default value can be changed while triggering it (optional). if it has allowed values it should be a value from allowed list
+  values:
+  - krishna
+  - kumar
+
+- name: testnumber
+  type: number
+  default: 2
+
+- name: testboolean
+  type: boolean
+  default: true
+
+- name: testobject
+  type: object
+  default:
+  - dev
+  - qa 
+  - uat
+  - prod
+
+- name: testobject
+  type: object
+  default:
+    name: kumar
+    age: 25
+    gender: male
+    location: hyderbad
+
+
+variables: # can be defined in pipeline level, stage level and job level
+- name: teststring
+  value: "Kumar"
+- teststring: "Kumar"
+- group: "test-vg"
+- template: 'variables.yaml'
+
+- name: testname
+  ${{ if eq(parameters.teststring, 'krishna') }}:
+    value: 'dev'
+  ${{ elseif eq(parameters.teststring, 'kumar') }}:
+    value: 'qa'
+  ${{ else }}:
+    value: 'test'
+
+resources:
+https://learn.microsoft.com/en-us/azure/devops/pipelines/process/resources?view=azure-devops&tabs=schema
+
+stages:
+- stage: build_stage
+  displayName: build stage
+  jobs:
+  - job: scan_job
+    displayName: Scan job
+    steps:
+    - tasks
+  - job: build_job
+    displayName: build job
+    dependsOn: scan_job
+    steps:
+    - tasks
+
+- stage: deploy_stage
+  displayName: deploy stage
+  dependsOn: build_stage
+  jobs:
+
+
+agentpool: #can be defined in entire pipeline level or stage level or job level
+
+
+#triggers:
+
+#manual trigger
+#----------------
+#trigger: none
+
+#CI
+trigger:
+  branches:
+    include:
+    - main
+    - releases/*
+    exclude:
+    - users/*
+  paths:
+    include:
+    - web
+    exclude:
+    - documentation

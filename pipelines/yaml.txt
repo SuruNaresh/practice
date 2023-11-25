@@ -1,0 +1,22 @@
+yaml - ain't markup language or yet another markup language
+It is a serialization language
+yaml can be used for configuration files, but it is used in many application where data is being stored and transmitted over the network
+yaml can be communicate with another languages
+
+yaml can be written in two types
+1. Block Style
+2. FLow style
+
+block style
+1. Name: krishna-kumar
+2. info:
+     age: 25
+     gender: male
+3. Roles:
+    - Azure
+    - Devops
+
+flow style
+1. Name: "krishna-kumar"
+2. info: {age: 25, gender: male}
+3. Roles: [Azure, DevOps]

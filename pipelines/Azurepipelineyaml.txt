@@ -1,0 +1,22 @@
+Yaml has two models
+1. regular model pipeline which means you can keep on writing into the same file
+2. template model you keep your code in different yaml file and call them based on neccessity
+
+components of yaml file
+1. Parameters
+2. Variables
+    a. Variables
+    b. conditional Variables
+3. Resources
+4. Agent pools
+5. Stages
+    a. stages
+    b. conditions
+    c. dependencies
+6. Jobs
+    a. jobs
+    b. conditions
+    c. dependencies
+7. tasks
+    b. conditions
+8. triggers
