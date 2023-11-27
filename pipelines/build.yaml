@@ -18,7 +18,7 @@ stages:
     steps:
     - template: 'deploy_steps.yaml'
       parameters:
-        env: 'dev'
+        environment: 'dev'
 
 - stage: qa_deploy
   displayName: qa deployment
@@ -29,4 +29,4 @@ stages:
     steps:
     - template: 'deploy_steps.yaml'
       parameters:
-        env: 'qa'
+        environment: 'qa'
