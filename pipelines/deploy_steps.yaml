@@ -3,6 +3,6 @@ parameters:
   type: string
 
 steps:
-- - powershell: |
-      write-Host "${{ parameters.environment }}"
-    displayName: 'PowerShell Script'
+- powershell: |
+    write-Host "${{ parameters.environment }}"
+  displayName: 'PowerShell Script'
