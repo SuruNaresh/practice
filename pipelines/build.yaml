@@ -30,3 +30,16 @@ stages:
     - template: 'deploy_steps.yaml'
       parameters:
         environment: 'qa'
+
+- stage: uat_deploy
+  displayName: uat deployment
+  dependsOn: 
+   - dev_deploy
+   - qa_deploy
+  jobs:
+  - job: uat_deploy
+    displayName: uat deployment
+    steps:
+    - template: 'deploy_steps.yaml'
+      parameters:
+        environment: 'uat'
