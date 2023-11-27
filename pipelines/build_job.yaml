@@ -1,0 +1,56 @@
+trigger: none
+
+parameters:
+- name: solutionpath
+  type: string
+  default: 'dotnet/demoapp.csproj'
+
+- name: artifactname
+  type: string
+  default: 'drop'
+
+
+variables:
+- name: 'nuget_version'
+  value: '6.x'
+- name: 'BuildPlatform'
+  value: 'Any CPU'
+- name: 'BuildConfiguration'
+  value: 'release'
+
+
+jobs:
+- job: build
+  displayName: Build job
+  pool:
+    name: Azure Pipelines
+    VMImage: 'Windows-Latest'
+    demands:
+    - msbuild
+    - visualstudio
+  steps:
+  - task: NuGetToolInstaller@0
+    displayName: 'Use NuGet 6.x'
+    inputs:
+      versionSpec: ${{ variables.nuget_version }} #or $(nuget_version)
+      checkLatest: true
+  
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore'
+    inputs:
+      restoreSolution: ${{ parameters.solutionpath }}
+
+  - task: VSBuild@1
+    displayName: 'Build solution'
+    inputs:
+      solution: ${{ parameters.solutionpath }}
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact'
+    inputs:
+      PathtoPublish: '$(build.artifactstagingdirectory)'
+      ArtifactName: '${{ parameters.artifactname }}'
+    condition: succeededOrFailed()
