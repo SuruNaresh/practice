@@ -30,11 +30,11 @@ stages:
         parameters:
           environment: 'dev'
 
-- ${{ if parameters.qa }}:
-  - stage: qa_deploy
-    displayName: qa deployment
-    dependsOn: build
-    jobs:
+- stage: qa_deploy
+  displayName: qa deployment
+  dependsOn: build
+  jobs:
+  - ${{ if parameters.qa }}:
     - job: qa_deploy
       displayName: qa deployment
       steps:
