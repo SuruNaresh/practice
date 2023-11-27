@@ -73,3 +73,7 @@ steps
 5. scan the application
 6. copy output
 7. publish artifact
+
+references/practice:
+https://azuredevopslabs.com/
+https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
