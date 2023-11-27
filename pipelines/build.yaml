@@ -8,3 +8,25 @@ stages:
     parameters:
       solutionpath: 'dotnet/demoapp.csproj'
       artifactname: 'test'
+
+- stage: dev_deploy
+  displayName: dev deployment
+  dependsOn: build
+  jobs:
+  - job: dev_deploy
+    displayName: dev deployment
+    steps:
+    - template: 'deploy_steps.yaml'
+      parameters:
+        env: 'dev'
+
+- stage: qa_deploy
+  displayName: qa deployment
+  dependsOn: build
+  jobs:
+  - job: qa_deploy
+    displayName: qa deployment
+    steps:
+    - template: 'deploy_steps.yaml'
+      parameters:
+        env: 'qa'
