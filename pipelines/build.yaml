@@ -33,14 +33,17 @@ stages:
 
 - stage: uat_deploy
   displayName: uat deployment
-  environment: 'uat_approval'
   dependsOn: 
    - dev_deploy
    - qa_deploy
   jobs:
-  - job: uat_deploy
+  - deployment: uat_deploy
     displayName: uat deployment
-    steps:
-    - template: 'deploy_steps.yaml'
-      parameters:
-        environment: 'uat'
+    environment: 'uat_approval'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - template: 'deploy_steps.yaml'
+            parameters:
+              environment: 'uat'
