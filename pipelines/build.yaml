@@ -4,6 +4,7 @@ stages:
 - stage: build
   displayName: build stage
   jobs:
-  - job: build
-    displayName: build job
-    steps:
+  - template: 'build_job_temp.yaml'
+    parameters:
+      solutionpath: 'dotnet/demoapp.csproj'
+      artifactname: 'test'
