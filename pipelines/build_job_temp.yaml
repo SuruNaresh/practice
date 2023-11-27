@@ -8,14 +8,6 @@ parameters:
   default: 'drop'
 
 
-variables:
-- name: 'nuget_version'
-  value: '6.x'
-- name: 'BuildPlatform'
-  value: 'Any CPU'
-- name: 'BuildConfiguration'
-  value: 'release'
-
 jobs:
 - job: build
   displayName: Build job
@@ -25,6 +17,13 @@ jobs:
     demands:
     - msbuild
     - visualstudio
+  variables:
+  - name: 'nuget_version'
+    value: '6.x'
+  - name: 'BuildPlatform'
+    value: 'Any CPU'
+  - name: 'BuildConfiguration'
+    value: 'release'
   steps:
   - task: NuGetToolInstaller@0
     displayName: 'Use NuGet 6.x'
