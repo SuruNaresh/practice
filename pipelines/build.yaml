@@ -33,6 +33,7 @@ stages:
 
 - stage: uat_deploy
   displayName: uat deployment
+  environment: 'uat_approval'
   dependsOn: 
    - dev_deploy
    - qa_deploy
