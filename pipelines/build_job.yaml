@@ -1,4 +1,7 @@
-trigger: none
+trigger:
+  branches:
+    include:
+    - main
 
 parameters:
 - name: solutionpath
@@ -18,6 +21,7 @@ variables:
 - name: 'BuildConfiguration'
   value: 'release'
 
+name: $(Build.DefinitionName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 jobs:
 - job: build
