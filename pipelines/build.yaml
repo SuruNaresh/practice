@@ -34,6 +34,12 @@ stages:
   displayName: qa deployment
   dependsOn: build
   jobs:
+  - job: qa_test_deploy
+    displayName: qa test deployment
+    steps:
+    - template: 'deploy_steps.yaml'
+      parameters:
+        environment: 'test'
   - ${{ if parameters.qa }}:
     - job: qa_deploy
       displayName: qa deployment
