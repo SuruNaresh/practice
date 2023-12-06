@@ -1,2 +1,13 @@
 Installation link
 https://docs.docker.com/desktop/install/windows-install/
+
+Instructions
+1. FROM - base image what you want to pick (mcr.microsoft.com)
+2. MAINTAINER - who is the maintainer of this dockerfile
+3. WORKDIR - working directory
+4. COPY - 
+5. ADD - 
+6. RUN
+7. CMD
+8. ENTRYPOINT
+9. EXPOSE
