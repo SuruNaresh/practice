@@ -11,3 +11,16 @@ Instructions
 7. CMD
 8. ENTRYPOINT
 9. EXPOSE
+
+
+docker build .
+docker build . -t 'webapp:1.0'
+# if you want to push to any registries we need to use below format for tag
+docker build . -t myregistry.azurecr.io/webapp:v1
+docker ps --> helps you to see running containers
+docker run --> will help you to spin up a container from an Image.
+docker images --> helps you to see all images
+docker start
+docker stop
+docker rm --> removing a container
+docker rmi --> remove an existing image
