@@ -1,0 +1,22 @@
+Installing azcli
+https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=winget
+Installing Kube login
+https://azure.github.io/kubelogin/install.html
+
+kubectl command refernce
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create
+
+1. Namespaces
+2. workloads
+    Deployments - Helps you to keep desired state
+    Replicasets - 
+    Pods
+    Stateful sets
+    Daemon sets
+    Jobs
+    Cron Jobs
+3. Services - https://kubernetes.io/docs/concepts/services-networking/service/
+    clusterip
+    nodeport
+    loadbalancer
+4. Ingress
