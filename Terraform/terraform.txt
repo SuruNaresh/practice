@@ -19,7 +19,7 @@ outputs
 resource blocks
 data blocks
 null resources
-provisioners
+provisioners - https://dev.to/cloudskills/getting-started-with-terraform-on-azure-provisioners-af5
 dynamic blocks
 
 
